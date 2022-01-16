@@ -6,7 +6,7 @@ import org.springframework.data.repository.history.RevisionRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, String>, RevisionRepository<User, String, Integer> {
+public interface UserRepository extends JpaRepository<User, String> {
 
     Optional<User> findByLoginAndPassword(String login, String password);
 

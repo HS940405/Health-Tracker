@@ -5,11 +5,9 @@ import com.example.healthtracker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//for joining
 @Service
 public class UserService {
 
-    //for joining
     @Autowired
     private final UserRepository userRepository;
 
