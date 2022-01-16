@@ -28,6 +28,9 @@ public class HealthStatus {
     private boolean nausea;
     private int stressLevel;
 
+    @CreatedDate
+    private Date createDate;
+
     public int getId() {
         return id;
     }
@@ -36,8 +39,69 @@ public class HealthStatus {
         this.id = id;
     }
 
-    @CreatedDate
-    private Date createDate;
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getHeartRate() {
+        return heartRate;
+    }
+
+    public void setHeartRate(int heartRate) {
+        this.heartRate = heartRate;
+    }
+
+    public int getStressLevel() {
+        return stressLevel;
+    }
+
+    public void setStressLevel(int stressLevel) {
+        this.stressLevel = stressLevel;
+    }
+
+    public boolean isCough() {
+        return cough;
+    }
+
+    public void setCough(boolean cough) {
+        this.cough = cough;
+    }
+
+    public boolean isHeadache() {
+        return headache;
+    }
+
+    public void setHeadache(boolean headache) {
+        this.headache = headache;
+    }
+
+    public boolean isStomachache() {
+        return stomachache;
+    }
+
+    public void setStomachache(boolean stomachache) {
+        this.stomachache = stomachache;
+    }
+
+    public boolean isNausea() {
+        return nausea;
+    }
+
+    public void setNausea(boolean nausea) {
+        this.nausea = nausea;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 
     @Override
     public boolean equals(Object o) {
