@@ -5,6 +5,8 @@ import com.example.healthtracker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class UserService {
 
@@ -30,4 +32,6 @@ public class UserService {
     public User authenticate(String login, String password) {
         return userRepository.findByLoginAndPassword(login, password).orElse(null);
     }
+
+
 }
