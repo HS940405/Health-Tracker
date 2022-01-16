@@ -9,6 +9,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "health_status_table")
