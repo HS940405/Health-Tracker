@@ -34,7 +34,6 @@ public class HealthStatus {
     private boolean nausea;
     private int stressLevel;
 
-    @ManyToOne //for history
     @JoinColumn (unique = true) //for history
     @CreatedDate
     private Date createDate;
