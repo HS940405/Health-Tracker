@@ -2,44 +2,20 @@ package com.example.healthtracker.model;
 
 import java.sql.Timestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
-import lombok.Data;
-
-@SuppressWarnings("FieldCanBeLocal")
+import com.example.healthtracker.model.HealthStatus;
 
 @Entity
-@Table(name = "users_table")
 
-public class User {
+public class User extends HealthStatus {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private int id;
+    @Column(unique = true)
     private String login;
     private String name;
     private String password;
-//    private int weight;
-//    private int heartRate;
-//    private boolean cough;
-//    private boolean headache;
-//    private boolean stomachache;
-//    private boolean nausea;
-//    private int stressLevel;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getLogin() {
         return login;
@@ -86,4 +62,6 @@ public class User {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+
 }
