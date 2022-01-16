@@ -10,7 +10,6 @@ import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
 
 @Entity
-@Audited  //collecting healthStatus history
 
 public class User extends HealthStatus {
 
