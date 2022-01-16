@@ -1,7 +1,9 @@
 package com.example.healthtracker.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.history.RevisionMetadata;
 import org.springframework.scheduling.quartz.LocalDataSourceJobStore;
 
 import javax.persistence.*;
@@ -11,6 +13,8 @@ import java.util.Objects;
 
 
 @Entity
+@Audited //for history
+//for joining two data tables (User, HealthStatus) into one
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "health_status_table")
 
@@ -20,7 +24,8 @@ public class HealthStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
-    @Column(unique = true)
+    @ManyToOne //for history
+    @JoinColumn (unique = true) //for history @Column
     private int weight;
     private int heartRate;
     private boolean cough;
@@ -29,8 +34,13 @@ public class HealthStatus {
     private boolean nausea;
     private int stressLevel;
 
+    @ManyToOne //for history
+    @JoinColumn (unique = true) //for history
     @CreatedDate
     private Date createDate;
+
+    @Transient  //for history
+    private RevisionMetadata<Integer> editVersion; //for history
 
     public int getId() {
         return id;
